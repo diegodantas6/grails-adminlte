@@ -55,6 +55,10 @@
 <script
 	src="${createLink(uri: '/adminlte/plugins/datatables/dataTables.bootstrap.min.js')}"></script>
 
+<!-- Notify -->
+<script type="text/javascript"
+	src="${createLink(uri: '/adminlte/plugins/notify/notify.js')}"></script>
+
 <g:layoutHead />
 </head>
 
