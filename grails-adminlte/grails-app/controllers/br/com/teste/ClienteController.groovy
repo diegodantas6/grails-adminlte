@@ -1,5 +1,7 @@
 package br.com.teste
 
+import br.com.teste.enums.NotifyType;
+import br.com.teste.utils.UtilsMensagem;
 import grails.converters.JSON
 
 
@@ -15,9 +17,21 @@ class ClienteController {
 		render(template: "lista", model:[clientes: lista])
 	}
 
+	def incluir() {
+		
+		render(template: "form", model:[title: "Novo", editable: true])
+		
+	}
+	
+	def salvar() {
+		
+		
+		
+	}
+	
 	def excluir() {
 
-		def retorno = [:]
+		def retorno
 
 		Cliente cliente = Cliente.get(params.id)
 
@@ -25,13 +39,11 @@ class ClienteController {
 
 			cliente.delete(flush:true)
 
-			retorno["mensagem"] = "Excluido com sucesso!"
-			retorno["type"] = "success"
+			retorno = UtilsMensagem.getMensagem("Excluido com sucesso!", NotifyType.SUCCESS)
 			
 		} catch(Exception e) {
 
-			retorno["mensagem"] = "Não foi possível excluir!"
-			retorno["type"] = "error"
+			retorno = UtilsMensagem.getMensagem("Não foi possível excluir!", NotifyType.ERROR)
 
 		}
 
