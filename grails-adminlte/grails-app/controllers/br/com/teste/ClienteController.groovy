@@ -23,13 +23,36 @@ class ClienteController {
 		
 	}
 	
-	def salvar() {
+	def alterar() {
 		
-		println( params )
+		Cliente cliente = Cliente.get(params.id)
 		
+		render(template: "form", model:[title: "Alterar", editable: true, cliente: cliente])
+		
+	}
+
+	def visualizar() {
+		
+		Cliente cliente = Cliente.get(params.id)
+		
+		render(template: "form", model:[title: "Visualizar", editable: false, cliente: cliente])
+		
+	}
+
+	def salvar(Cliente cliente) {
+
 		def retorno
 		
-		retorno = UtilsMensagem.getMensagem("Salvo com sucesso!", NotifyType.SUCCESS)
+		if (cliente.hasErrors()) {
+			
+			retorno = UtilsMensagem.getMensagem("Não foi possível salvar!", NotifyType.ERROR, cliente.errors)
+			
+		} else {
+		
+			cliente.save(flush:true)
+		
+			retorno = UtilsMensagem.getMensagem("Salvo com sucesso!", NotifyType.SUCCESS)
+		}
 		
 		render retorno as JSON
 		
