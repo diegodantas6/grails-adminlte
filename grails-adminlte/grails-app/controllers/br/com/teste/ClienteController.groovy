@@ -25,7 +25,13 @@ class ClienteController {
 	
 	def salvar() {
 		
+		println( params )
 		
+		def retorno
+		
+		retorno = UtilsMensagem.getMensagem("Salvo com sucesso!", NotifyType.SUCCESS)
+		
+		render retorno as JSON
 		
 	}
 	

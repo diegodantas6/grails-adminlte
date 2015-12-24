@@ -4,8 +4,8 @@
 			${title}
 		</h3>
 	</div>
-	<form>
-		<input type="hidden" id="id">
+	<g:formRemote name="form" url="[action: 'salvar']" onSuccess="retornoSalvar(data)">
+		<input type="hidden" name="id">
 
 		<div class="box-body">
 
@@ -15,7 +15,7 @@
 					<div class="input-group-addon">
 						<i class="fa fa-laptop"></i>
 					</div>
-					<input type="text" class="form-control" id="nome">
+					<input type="text" class="form-control" name="nome">
 				</div>
 			</div>
 
@@ -25,7 +25,7 @@
 					<div class="input-group-addon">
 						<i class="fa fa-laptop"></i>
 					</div>
-					<input type="text" class="form-control" id="cpf"
+					<input type="text" class="form-control" name="cpf"
 						data-inputmask="'mask': '999.999.999-99'" data-mask>
 				</div>
 			</div>
@@ -40,7 +40,7 @@
 			<button type="submit" class="btn btn-primary pull-right"
 				onclick="javascript: salvar()">Salvar</button>
 		</div>
-	</form>
+	</g:formRemote>
 </div>
 <!-- /.box -->
 

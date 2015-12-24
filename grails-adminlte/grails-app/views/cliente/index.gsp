@@ -49,7 +49,12 @@
 
 	}
 
-	function cancelar(id) {
+	function retornoSalvar(data) {
+		$.notify(data.mensagem, data.type);
+		cancelar()
+	}
+
+	function cancelar() {
 		$("#divFormLista").show()
 		$("#divForm").hide()
 	}
