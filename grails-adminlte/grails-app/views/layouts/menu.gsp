@@ -54,7 +54,6 @@
 	src="${createLink(uri: '/adminlte/plugins/datatables/jquery.dataTables.min.js')}"></script>
 <script
 	src="${createLink(uri: '/adminlte/plugins/datatables/dataTables.bootstrap.min.js')}"></script>
-
 <!-- InputMask -->
 <script
 	src="${createLink(uri: '/adminlte/plugins/input-mask/jquery.inputmask.js')}"></script>
@@ -62,7 +61,6 @@
 	src="${createLink(uri: '/adminlte/plugins/input-mask/jquery.inputmask.date.extensions.js')}"></script>
 <script
 	src="${createLink(uri: '/adminlte/plugins/input-mask/jquery.inputmask.extensions.js')}"></script>
-
 <!-- Notify -->
 <script type="text/javascript"
 	src="${createLink(uri: '/adminlte/plugins/notify/notify.js')}"></script>
@@ -265,5 +263,6 @@
 
 	</div>
 	<!-- ./wrapper -->
+
 </body>
 </html>

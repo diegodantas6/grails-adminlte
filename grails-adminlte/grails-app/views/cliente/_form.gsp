@@ -6,32 +6,30 @@
 	</div>
 	<form>
 		<input type="hidden" id="id">
-		
+
 		<div class="box-body">
+
 			<div class="col-sm-6 form-group">
 				<label>Nome</label>
-				<input type="text" class="form-control" id="nome">
+				<div class="input-group">
+					<div class="input-group-addon">
+						<i class="fa fa-laptop"></i>
+					</div>
+					<input type="text" class="form-control" id="nome">
+				</div>
 			</div>
-			
+
 			<div class="col-sm-6 form-group">
 				<label>CPF</label>
-				<input type="text" class="form-control" id="cpf" data-inputmask="'mask': '999.999.999-99'" data-mask>
+				<div class="input-group">
+					<div class="input-group-addon">
+						<i class="fa fa-laptop"></i>
+					</div>
+					<input type="text" class="form-control" id="cpf"
+						data-inputmask="'mask': '999.999.999-99'" data-mask>
+				</div>
 			</div>
-			
-			<input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
-			
-			                  <!-- phone mask -->
-                  <div class="form-group">
-                    <label>Intl US phone mask:</label>
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        <i class="fa fa-phone"></i>
-                      </div>
-                      <input type="text" class="form-control" data-inputmask="'mask': ['999-999-9999 [x99999]', '+099 99 99 9999[9]-9999']" data-mask>
-                    </div><!-- /.input group -->
-                  </div><!-- /.form group -->
-			
-			
+
 		</div>
 		<!-- /.box-body -->
 
@@ -45,3 +43,10 @@
 	</form>
 </div>
 <!-- /.box -->
+
+<!-- Page script -->
+<script>
+	$(function() {
+		$("[data-mask]").inputmask();
+	});
+</script>

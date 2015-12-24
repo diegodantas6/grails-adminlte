@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta name="layout" content="menu"/>
-	</head>
-	<body>
-		<p>MENU</p>
-	</body>
+<head>
+<meta name="layout" content="menu" />
+</head>
+<body>
+
+</body>
 </html>
