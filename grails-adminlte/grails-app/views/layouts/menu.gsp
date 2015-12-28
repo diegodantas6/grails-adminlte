@@ -270,5 +270,30 @@
 	</div>
 	<!-- ./wrapper -->
 
+	<script type="text/javascript">
+		function customConfirm(message, yesFunc, noFunc) {
+			//DOC: http://craftpip.github.io/jquery-confirm/
+			$.confirm({
+				confirmButton : 'Confirmar',
+				cancelButton : 'Cancelar',
+				confirmButtonClass : 'btn-primary',
+				cancelButtonClass : 'btn-danger',
+				keyboardEnabled : true,
+				//theme : 'supervan',
+				title : 'Sistema Template',
+				icon : 'glyphicon glyphicon-heart',
+				content : message,
+
+				confirm : function() {
+					yesFunc()
+				},
+				cancel : function() {
+					noFunc()
+				}
+
+			});
+		}
+	</script>
+
 </body>
 </html>

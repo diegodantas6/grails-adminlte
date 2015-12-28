@@ -22,7 +22,7 @@
 	}
 
 	function excluir(id) {
-		if (confirm("Deseja realmente excluir?")) {
+		customConfirm('Deseja realmente excluir?', function() {
 			$.ajax({
 				method : "POST",
 				url : "cliente/excluir",
@@ -38,7 +38,8 @@
 					}
 				}
 			})
-		}
+		}, function() {
+		});
 	}
 
 	function visualizar(id) {
@@ -73,7 +74,7 @@
 
 	function retornoSalvar(data) {
 		$.notify(data.mensagem, data.type);
-		
+
 		if (data.type == "success") {
 			carregarLista()
 			$("#divFormLista").show()
@@ -82,7 +83,7 @@
 				var text = data.errors.errors[i].message
 				var field = "#div_" + data.errors.errors[i].field
 
-				$( field ).addClass( "has-error" );
+				$(field).addClass("has-error");
 			}
 		}
 	}
