@@ -34,6 +34,9 @@
 <link rel="stylesheet"
 	href="${createLink(uri: '/adminlte/dist/css/skins/skin-blue.min.css')}">
 
+<link rel="stylesheet"
+	href="${createLink(uri: '/adminlte/plugins/confirm/jquery-confirm.min.css')}">
+
 <!-- REQUIRED JS SCRIPTS -->
 
 <!-- jQuery 2.1.4 -->
@@ -64,6 +67,9 @@
 <!-- Notify -->
 <script type="text/javascript"
 	src="${createLink(uri: '/adminlte/plugins/notify/notify.js')}"></script>
+<!-- Confirm -->
+<script type="text/javascript"
+	src="${createLink(uri: '/adminlte/plugins/confirm/jquery-confirm.min.js')}"></script>
 
 <g:layoutHead />
 </head>
