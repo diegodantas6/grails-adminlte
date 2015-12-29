@@ -21,9 +21,6 @@
 <!-- Ionicons -->
 <link rel="stylesheet"
 	href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-<!-- Theme style -->
-<link rel="stylesheet"
-	href="${createLink(uri: '/adminlte/dist/css/AdminLTE.min.css')}">
 <!-- daterange picker -->
 <link rel="stylesheet"
 	href="${createLink(uri: '/adminlte/plugins/daterangepicker/daterangepicker-bs3.css')}">
@@ -36,6 +33,12 @@
 <!-- Confirm -->
 <link rel="stylesheet"
 	href="${createLink(uri: '/adminlte/plugins/confirm/jquery-confirm.min.css')}">
+<!-- Select2 -->
+<link rel="stylesheet"
+	href="${createLink(uri: '/adminlte/plugins/select2/select2.min.css')}">
+<!-- Theme style -->
+<link rel="stylesheet"
+	href="${createLink(uri: '/adminlte/dist/css/AdminLTE.min.css')}">
 
 <!-- REQUIRED JS SCRIPTS -->
 
@@ -70,6 +73,9 @@
 <!-- Confirm -->
 <script type="text/javascript"
 	src="${createLink(uri: '/adminlte/plugins/confirm/jquery-confirm.min.js')}"></script>
+<!-- Select2 -->
+<script
+	src="${createLink(uri: '/adminlte/plugins/select2/select2.full.min.js')}"></script>
 
 <g:layoutHead />
 </head>
@@ -120,14 +126,12 @@
 								<li class="footer"><a href="#">View all</a></li>
 							</ul>
 						</li>
-						
+
 						<!-- LogOff -->
-						<li class="notifications-menu">
-							<a href="${createLink(uri: '/')}">
-								<i class="fa fa-power-off"></i>
-							</a>
-						</li>
-						
+						<li class="notifications-menu"><a
+							href="${createLink(uri: '/')}"> <i class="fa fa-power-off"></i>
+						</a></li>
+
 					</ul>
 				</div>
 			</nav>
@@ -165,8 +169,7 @@
 						<ul class="treeview-menu">
 							<li><a href="${createLink(uri: '/cliente')}"><i
 									class="fa fa-circle-o"></i>Cliente</a></li>
-							<li><a href="#"
-								onclick="openForm('pages-diego/produto/index.html')"><i
+							<li><a href="${createLink(uri: '/produto')}"><i
 									class="fa fa-circle-o"></i>Produto</a></li>
 						</ul></li>
 
