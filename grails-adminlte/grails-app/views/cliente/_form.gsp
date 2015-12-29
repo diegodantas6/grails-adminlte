@@ -13,7 +13,7 @@
 		<div class="box-body">
 
 			<div class="col-sm-6 form-group" id="div_nome">
-				<label>Nome</label>
+				<label>* Nome</label>
 				<div class="input-group">
 					<div class="input-group-addon">
 						<i class="fa fa-laptop"></i>
@@ -23,7 +23,7 @@
 			</div>
 
 			<div class="col-sm-6 form-group" id="div_cpf">
-				<label>CPF</label>
+				<label>* CPF</label>
 				<div class="input-group">
 					<div class="input-group-addon">
 						<i class="fa fa-laptop"></i>
