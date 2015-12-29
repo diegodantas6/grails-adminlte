@@ -84,6 +84,12 @@
 				var field = "#div_" + data.errors.errors[i].field
 
 				$(field).addClass("has-error");
+
+				$(field).focusin(function() {
+					$(this).removeClass("has-error");
+				});
+
+				$.notify(text, data.type);
 			}
 		}
 	}
