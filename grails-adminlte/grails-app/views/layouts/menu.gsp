@@ -63,6 +63,8 @@
 <!-- InputMask -->
 <script
 	src="${createLink(uri: '/adminlte/plugins/input-mask/jquery.inputmask.bundle.js')}"></script>
+<script
+	src="${createLink(uri: '/adminlte/plugins/input-mask/jquery.price_format.2.0.min.js')}"></script>
 <!-- Notify -->
 <script type="text/javascript"
 	src="${createLink(uri: '/adminlte/plugins/notify/notify.js')}"></script>

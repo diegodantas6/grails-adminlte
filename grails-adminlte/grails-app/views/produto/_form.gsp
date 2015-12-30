@@ -47,11 +47,8 @@
 					<div class="input-group-addon">
 						<i class="fa fa-usd"></i>
 					</div>
-
 					<input type="text" class="form-control" name="produto.preco"
-						id="preco"
-						value="${ formatNumber( number: produto?.preco, type: 'currency', maxFractionDigits: 2,  ) }">
-
+						id="preco" value="${produto?.preco}">
 				</div>
 			</div>
 
@@ -105,15 +102,20 @@
 
 		$("#nome").focus();
 
-		$("#quantidade").inputmask({
-			alias : "decimal"
+		$("#preco").priceFormat({
+			prefix : '',
+			centsSeparator : ',',
+			thousandsSeparator : '.'
 		});
 
-		$("#custo").inputmask({
-			alias : "currency",
-			digits : 2,
-			prefix : "",
-			groupSize : 200
+		$("#custo").priceFormat({
+			prefix : '',
+			centsSeparator : ',',
+			thousandsSeparator : '.'
+		});
+
+		$("#quantidade").inputmask({
+			alias : 'integer'
 		});
 	});
 </script>

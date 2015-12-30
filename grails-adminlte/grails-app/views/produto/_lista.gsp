@@ -15,9 +15,9 @@
 		<tr>
 			<td>${produto.nome}</td>
 			<td>${produto.unidade}</td>
-			<td>${produto.preco}</td>
-			<td>${produto.custo}</td>
-			<td>${produto.quantidade}</td>
+			<td><g:formatNumber number="${produto.preco}" type="currency" /></td>
+			<td><g:formatNumber number="${produto.custo}" type="currency" /></td>
+			<td><g:formatNumber number="${produto.quantidade}" type="number" /></td>
 			<td>${new SimpleDateFormat( "dd/MM/yyyy HH:mm:ss" ).format( produto.dataAlteracao )}</td>
 			<td>
 				<div class="btn-group btn-group-justified" role="group">
