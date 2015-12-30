@@ -62,7 +62,7 @@
 	src="${createLink(uri: '/adminlte/plugins/datatables/dataTables.bootstrap.min.js')}"></script>
 <!-- InputMask -->
 <script
-	src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+	src="${createLink(uri: '/adminlte/plugins/input-mask/jquery.inputmask.bundle.js')}"></script>
 <!-- Notify -->
 <script type="text/javascript"
 	src="${createLink(uri: '/adminlte/plugins/notify/notify.js')}"></script>
