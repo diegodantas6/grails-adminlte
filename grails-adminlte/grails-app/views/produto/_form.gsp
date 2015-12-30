@@ -41,25 +41,39 @@
 
 			</div>
 
-			<div class="col-sm-6 form-group" id="div_preco">
+			<div class="col-sm-4 form-group" id="div_preco">
 				<label>* Preço</label>
 				<div class="input-group">
 					<div class="input-group-addon">
-						<i class="fa fa-laptop"></i>
+						<i class="fa fa-usd"></i>
 					</div>
+
 					<input type="text" class="form-control" name="produto.preco"
-						value="${produto?.preco}">
+						id="preco"
+						value="${ formatNumber( number: produto?.preco, type: 'currency', maxFractionDigits: 2,  ) }">
+
 				</div>
 			</div>
 
-			<div class="col-sm-6 form-group" id="div_custo">
+			<div class="col-sm-4 form-group" id="div_custo">
 				<label>* Custo</label>
 				<div class="input-group">
 					<div class="input-group-addon">
-						<i class="fa fa-laptop"></i>
+						<i class="fa fa-usd"></i>
 					</div>
 					<input type="text" class="form-control" name="produto.custo"
-						value="${produto?.custo}">
+						id="custo" value="${produto?.custo}">
+				</div>
+			</div>
+
+			<div class="col-sm-4 form-group" id="div_quantidade">
+				<label>Quantidade</label>
+				<div class="input-group">
+					<div class="input-group-addon">
+						<i class="fa fa-database"></i>
+					</div>
+					<input type="text" class="form-control" name="produto.quantidade"
+						id="quantidade" value="${produto?.quantidade}">
 				</div>
 			</div>
 
@@ -86,11 +100,20 @@
 
 <!-- Page script -->
 <script>
-	$(function() {
+	$(document).ready(function() {
 		$(".select2").select2();
 
-		$("[data-mask]").inputmask();
-
 		$("#nome").focus();
+
+		$("#quantidade").inputmask({
+			alias : "decimal"
+		});
+
+		$("#custo").inputmask({
+			alias : "currency",
+			digits : 2,
+			prefix : "",
+			groupSize : 200
+		});
 	});
 </script>

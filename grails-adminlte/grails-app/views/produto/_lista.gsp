@@ -1,3 +1,4 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <table id="tabela" class="table table-bordered table-striped">
 	<thead>
 		<tr>
@@ -5,6 +6,8 @@
 			<th>Unidade</th>
 			<th>Preço</th>
 			<th>Custo</th>
+			<th>Quantidade</th>
+			<th>Data Alteração</th>
 			<th style="width: 75px;">Ações</th>
 		</tr>
 	</thead>
@@ -14,6 +17,8 @@
 			<td>${produto.unidade}</td>
 			<td>${produto.preco}</td>
 			<td>${produto.custo}</td>
+			<td>${produto.quantidade}</td>
+			<td>${new SimpleDateFormat( "dd/MM/yyyy HH:mm:ss" ).format( produto.dataAlteracao )}</td>
 			<td>
 				<div class="btn-group btn-group-justified" role="group">
 					<div class="btn-group" role="group">

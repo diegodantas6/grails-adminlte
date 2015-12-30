@@ -4,11 +4,13 @@
 			${title}
 		</h3>
 	</div>
-	<g:formRemote name="form" url="[action: 'salvar']" onSuccess="retornoSalvar(data)">
-		
+	<g:formRemote name="form" url="[action: 'salvar']"
+		onSuccess="retornoSalvar(data)">
+
 		<input type="hidden" name="cliente.id" value="${cliente?.id}">
-		
-		<input type="hidden" name="cliente.version" value="${cliente?.version}">
+
+		<input type="hidden" name="cliente.version"
+			value="${cliente?.version}">
 
 		<div class="box-body">
 
@@ -18,7 +20,8 @@
 					<div class="input-group-addon">
 						<i class="fa fa-laptop"></i>
 					</div>
-					<input type="text" class="form-control" name="cliente.nome" id="nome" value="${cliente?.nome}">
+					<input type="text" class="form-control" name="cliente.nome"
+						id="nome" value="${cliente?.nome}">
 				</div>
 			</div>
 
@@ -28,8 +31,8 @@
 					<div class="input-group-addon">
 						<i class="fa fa-laptop"></i>
 					</div>
-					<input type="text" class="form-control" name="cliente.cpf" value="${cliente?.cpf}"
-						data-inputmask="'mask': '999.999.999-99'" data-mask>
+					<input type="text" class="form-control" name="cliente.cpf" id="cpf"
+						value="${cliente?.cpf}">
 				</div>
 			</div>
 
@@ -37,11 +40,11 @@
 		<!-- /.box-body -->
 
 		<div class="box-footer">
-		
+
 			<g:if test="${editable}">
 				<button type="reset" class="btn btn-danger"
 					onclick="javascript: cancelar()">Cancelar</button>
-	
+
 				<button type="submit" class="btn btn-primary pull-right"
 					onclick="javascript: salvar()">Salvar</button>
 			</g:if>
@@ -56,9 +59,12 @@
 
 <!-- Page script -->
 <script>
-	$(function() {
-		$("[data-mask]").inputmask();
-
+	$(document).ready(function() {
 		$("#nome").focus();
+
+		$("#cpf").inputmask({
+			mask : "999.999.999-99",
+			clearIncomplete : true
+		});
 	});
 </script>

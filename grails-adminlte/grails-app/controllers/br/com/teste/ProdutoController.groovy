@@ -42,6 +42,8 @@ class ProdutoController {
 	def salvar(Produto produto) {
 
 		def retorno
+
+		produto.dataAlteracao = new Date()
 		
 		if (produto.hasErrors()) {
 			
