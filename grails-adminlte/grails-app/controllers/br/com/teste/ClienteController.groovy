@@ -18,46 +18,55 @@ class ClienteController {
 	}
 
 	def incluir() {
-		
+
 		render(template: "form", model:[title: "Novo", editable: true])
-		
 	}
-	
+
 	def alterar() {
-		
+
 		Cliente cliente = Cliente.get(params.id)
-		
+
 		render(template: "form", model:[title: "Alterar", editable: true, cliente: cliente])
-		
 	}
 
 	def visualizar() {
-		
+
 		Cliente cliente = Cliente.get(params.id)
-		
+
 		render(template: "form", model:[title: "Visualizar", editable: false, cliente: cliente])
-		
 	}
 
 	def salvar(Cliente cliente) {
 
 		def retorno
 
+		if (params.cliente.id) {
+
+			Cliente old = Cliente.get(params.cliente.id);
+
+			if (old.version.toLong() > params.cliente.version.toLong()) {
+
+				retorno = UtilsMensagem.getMensagem("O cliente já foi alterado por outro usuário!\nFavor canecelar esta operação e tentar novamente!", NotifyType.ERROR)
+
+				render retorno as JSON
+
+				return
+			}
+		}
+
 		if (cliente.hasErrors()) {
-			
+
 			retorno = UtilsMensagem.getMensagem("Não foi possível salvar!", NotifyType.ERROR, cliente.errors)
-			
 		} else {
-		
+
 			cliente.save(flush:true)
-		
+
 			retorno = UtilsMensagem.getMensagem("Salvo com sucesso!", NotifyType.SUCCESS)
 		}
-		
+
 		render retorno as JSON
-		
 	}
-	
+
 	def excluir() {
 
 		def retorno
@@ -69,11 +78,9 @@ class ClienteController {
 			cliente.delete(flush:true)
 
 			retorno = UtilsMensagem.getMensagem("Excluido com sucesso!", NotifyType.SUCCESS)
-			
 		} catch(Exception e) {
 
 			retorno = UtilsMensagem.getMensagem("Não foi possível excluir!", NotifyType.ERROR)
-
 		}
 
 		render retorno as JSON
