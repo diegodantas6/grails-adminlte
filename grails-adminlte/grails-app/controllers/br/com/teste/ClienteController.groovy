@@ -42,7 +42,7 @@ class ClienteController {
 	def salvar(Cliente cliente) {
 
 		def retorno
-		
+
 		if (cliente.hasErrors()) {
 			
 			retorno = UtilsMensagem.getMensagem("Não foi possível salvar!", NotifyType.ERROR, cliente.errors)

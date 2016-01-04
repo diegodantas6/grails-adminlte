@@ -28,17 +28,10 @@
 			<div class="col-sm-6 form-group" id="div_unidade">
 				<label>* Unidade</label>
 
-				<div class="input-group">
-					<div class="input-group-addon">
-						<i class="fa fa-laptop"></i>
-					</div>
-
-					<g:select class="form-control select2" style="width: 100%;"
-						noSelection="${['null':'Select One...']}" name="produto.unidade"
-						from="${br.com.teste.enums.Unidade?.values()}"
-						value="${produto?.unidade}" />
-				</div>
-
+				<g:select class="form-control select2" name="produto.unidade"
+					noSelection="${['null':'Select One...']}"
+					from="${br.com.teste.enums.Unidade?.values()}"
+					value="${produto?.unidade}" />
 			</div>
 
 			<div class="col-sm-4 form-group" id="div_preco">
