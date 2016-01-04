@@ -15,7 +15,6 @@ class Produto {
     static constraints = {
 		nome blank: false, nullable: false, size: 20..60
 		unidade nullable: false, blank: false
-		preco min: new BigDecimal(0), scale: 2
-		custo min: new BigDecimal(0)
+		quantidade min: 0
     }
 }
