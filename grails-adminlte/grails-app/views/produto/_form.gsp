@@ -20,7 +20,7 @@
 					<div class="input-group-addon">
 						<i class="fa fa-laptop"></i>
 					</div>
-					<input type="text" class="form-control" name="produto.nome"
+					<input type="text" class="form-control" name="produto.nome" <g:if test="${!editable}">disabled</g:if>
 						id="nome" value="${produto?.nome}">
 				</div>
 			</div>
@@ -28,10 +28,16 @@
 			<div class="col-sm-6 form-group" id="div_unidade">
 				<label>* Unidade</label>
 
-				<g:select class="form-control select2" name="produto.unidade"
-					noSelection="${['null':'Select One...']}"
-					from="${br.com.teste.enums.Unidade?.values()}"
-					value="${produto?.unidade}" />
+				<g:if test="${editable}">
+					<g:select class="form-control select2" name="produto.unidade"
+						noSelection="${['null':'Select One...']}"
+						from="${br.com.teste.enums.Unidade?.values()}"
+						value="${produto?.unidade}" />
+				</g:if>
+				<g:else>
+					<input type="text" class="form-control" value="${produto?.unidade}" disabled>
+				</g:else>
+
 			</div>
 
 			<div class="col-sm-4 form-group" id="div_preco">
@@ -41,6 +47,7 @@
 						<i class="fa fa-usd"></i>
 					</div>
 					<input type="text" class="form-control" name="produto.preco"
+						<g:if test="${!editable}">disabled</g:if>
 						id="preco" value="${produto?.preco}">
 				</div>
 			</div>
@@ -52,6 +59,7 @@
 						<i class="fa fa-usd"></i>
 					</div>
 					<input type="text" class="form-control" name="produto.custo"
+						<g:if test="${!editable}">disabled</g:if>
 						id="custo" value="${produto?.custo}">
 				</div>
 			</div>
@@ -63,6 +71,7 @@
 						<i class="fa fa-database"></i>
 					</div>
 					<input type="text" class="form-control" name="produto.quantidade"
+						<g:if test="${!editable}">disabled</g:if>
 						id="quantidade" value="${produto?.quantidade}">
 				</div>
 			</div>

@@ -21,7 +21,8 @@
 						<i class="fa fa-laptop"></i>
 					</div>
 					<input type="text" class="form-control" name="cliente.nome"
-						id="nome" value="${cliente?.nome}">
+						id="nome" <g:if test="${!editable}">disabled</g:if>
+						value="${cliente?.nome}">
 				</div>
 			</div>
 
@@ -32,7 +33,7 @@
 						<i class="fa fa-laptop"></i>
 					</div>
 					<input type="text" class="form-control" name="cliente.cpf" id="cpf"
-						value="${cliente?.cpf}">
+						<g:if test="${!editable}">disabled</g:if> value="${cliente?.cpf}">
 				</div>
 			</div>
 
