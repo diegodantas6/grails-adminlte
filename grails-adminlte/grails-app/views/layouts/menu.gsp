@@ -45,6 +45,9 @@
 <!-- jQuery 2.1.4 -->
 <script
 	src="${createLink(uri: '/adminlte/plugins/jQuery/jQuery-2.1.4.min.js')}"></script>
+<!-- jQueryUI -->
+<script
+	src="${createLink(uri: '/adminlte/plugins/jQueryUI/jquery-ui.min.js')}"></script>
 <!-- Bootstrap 3.3.5 -->
 <script
 	src="${createLink(uri: '/adminlte/bootstrap/js/bootstrap.min.js')}"></script>
