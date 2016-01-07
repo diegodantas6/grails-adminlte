@@ -111,6 +111,21 @@
 			}
 		})
 	}
+
+	function incluirTelefone() {
+		$.ajax({
+			method : "POST",
+			url : "cliente/incluirTelefone",
+			data : {},
+			success : function(data) {
+				$("#divFormListaTelefone").hide()
+				$("#divFormTelefone").show()
+				$("#divFormTelefone").html(data)
+			}
+		})
+	}
+
+	
 </script>
 </head>
 <body>

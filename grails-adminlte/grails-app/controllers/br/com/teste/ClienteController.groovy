@@ -19,21 +19,33 @@ class ClienteController {
 
 	def incluir() {
 
-		render(template: "form", model:[title: "Novo", editable: true])
+		//render(template: "form", model:[title: "Novo", editable: true])
+
+		render(template: "form_tab", model:[title: "Novo", editable: true])
 	}
+
+	def incluirTelefone() {
+
+		render(template: "form_telefone")
+	}
+
 
 	def alterar() {
 
 		Cliente cliente = Cliente.get(params.id)
 
-		render(template: "form", model:[title: "Alterar", editable: true, cliente: cliente])
+		//render(template: "form", model:[title: "Alterar", editable: true, cliente: cliente])
+
+		render(template: "form_tab", model:[title: "Alterar", editable: true, cliente: cliente])
 	}
 
 	def visualizar() {
 
 		Cliente cliente = Cliente.get(params.id)
 
-		render(template: "form", model:[title: "Visualizar", editable: false, cliente: cliente])
+		//render(template: "form", model:[title: "Visualizar", editable: false, cliente: cliente])
+
+		render(template: "form_tab", model:[title: "Visualizar", editable: false, cliente: cliente])
 	}
 
 	def salvar(Cliente cliente) {

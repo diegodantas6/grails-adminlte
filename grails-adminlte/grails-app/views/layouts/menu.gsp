@@ -12,6 +12,9 @@
 	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
 	name="viewport">
 
+<!-- Reset -->
+<link rel="stylesheet"
+	href="${createLink(uri: '/adminlte/plugins/reset/html5-reset.css')}">
 <!-- Bootstrap 3.3.5 -->
 <link rel="stylesheet"
 	href="${createLink(uri: '/adminlte/bootstrap/css/bootstrap.min.css')}">
@@ -27,18 +30,21 @@
 <!-- DataTables -->
 <link rel="stylesheet"
 	href="${createLink(uri: '/adminlte/plugins/datatables/dataTables.bootstrap.css')}">
-<!-- Skin - blue -->
-<link rel="stylesheet"
-	href="${createLink(uri: '/adminlte/dist/css/skins/skin-blue.min.css')}">
 <!-- Confirm -->
 <link rel="stylesheet"
 	href="${createLink(uri: '/adminlte/plugins/confirm/jquery-confirm.min.css')}">
 <!-- Select2 -->
 <link rel="stylesheet"
 	href="${createLink(uri: '/adminlte/plugins/select2/select2.min.css')}">
+<!-- jQueryUI -->
+<link rel="stylesheet"
+	href="${createLink(uri: '/adminlte/plugins/jQueryUI/jquery-ui.min.css')}">
 <!-- Theme style -->
 <link rel="stylesheet"
 	href="${createLink(uri: '/adminlte/dist/css/AdminLTE.min.css')}">
+<!-- Skin - blue -->
+<link rel="stylesheet"
+	href="${createLink(uri: '/adminlte/dist/css/skins/skin-blue.min.css')}">
 
 <!-- REQUIRED JS SCRIPTS -->
 
