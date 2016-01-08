@@ -21,6 +21,22 @@
 		})
 	}
 
+	function carregarListaTelefone(id, editable) {
+		$("#divFormTelefone").hide()
+
+		$.ajax({
+			method : "POST",
+			url : "cliente/listarTelefone",
+			data : {
+				"id" : id,
+				"editable" : editable
+			},
+			success : function(data) {
+				$("#divListaTelefone").html(data)
+			}
+		})
+	}
+
 	function excluir(id) {
 		customConfirm('Deseja realmente excluir?', function() {
 			$.ajax({
@@ -42,6 +58,27 @@
 		});
 	}
 
+	function excluirTelefone(id) {
+		customConfirm('Deseja realmente excluir?', function() {
+			$.ajax({
+				method : "POST",
+				url : "cliente/excluirTelefone",
+				data : {
+					"id" : id
+				},
+				success : function(data) {
+
+					$.notify(data.mensagem, data.type);
+
+					if (data.type == "success") {
+						carregarListaTelefone()
+					}
+				}
+			})
+		}, function() {
+		});
+	}
+
 	function visualizar(id) {
 		$.ajax({
 			method : "POST",
@@ -50,6 +87,8 @@
 				"id" : id
 			},
 			success : function(data) {
+				carregarListaTelefone(id, false)
+
 				$("#divFormLista").hide()
 				$("#divForm").show()
 				$("#divForm").html(data)
@@ -65,6 +104,8 @@
 				"id" : id
 			},
 			success : function(data) {
+				carregarListaTelefone(id, true)
+
 				$("#divFormLista").hide()
 				$("#divForm").show()
 				$("#divForm").html(data)
@@ -78,6 +119,28 @@
 		if (data.type == "success") {
 			carregarLista()
 			$("#divFormLista").show()
+		} else {
+			for (i = 0; i < data.errors.errors.length; i++) {
+				var text = data.errors.errors[i].message
+				var field = "#div_" + data.errors.errors[i].field
+
+				$(field).addClass("has-error");
+
+				$(field).focusin(function() {
+					$(this).removeClass("has-error");
+				});
+
+				$.notify(text, data.type);
+			}
+		}
+	}
+
+	function retornoSalvarTelefone(data) {
+		$.notify(data.mensagem, data.type);
+
+		if (data.type == "success") {
+			carregarListaTelefone()
+			$("#divFormListaTelefone").show()
 		} else {
 			for (i = 0; i < data.errors.errors.length; i++) {
 				var text = data.errors.errors[i].message

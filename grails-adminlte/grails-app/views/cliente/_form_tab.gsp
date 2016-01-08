@@ -14,14 +14,17 @@
 
 			<div class="box-header with-border">
 				<h1 class="box-title">Telefones</h1>
-				<button type="submit" onclick="javascript: incluirTelefone()"
-					class="btn btn-primary pull-right">Novo</button>
+
+				<g:if test="${editable}">
+					<button type="submit" onclick="javascript: incluirTelefone()"
+						class="btn btn-primary pull-right">Novo</button>
+				</g:if>
 			</div>
 
-			<g:render template="lista_telefone"></g:render>
-			
+			<div class="box-body" id="divListaTelefone"></div>
+
 		</div>
-		
+
 		<div class="box-body" id="divFormTelefone"></div>
 
 	</div>

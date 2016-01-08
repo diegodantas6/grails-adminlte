@@ -5,24 +5,23 @@
 	<g:formRemote name="formTelefone" url="[action: 'salvarTelefone']"
 		onSuccess="retornoSalvarTelefone(data)">
 
-		<input type="hidden" name="cliente.telefone.id"
-			value="${cliente?.telefone?.id}">
+		<input type="hidden" name="telefone.id"
+			value="${telefone?.id}">
 
-		<input type="hidden" name="cliente.telefone.version"
-			value="${cliente?.telefone?.version}">
+		<input type="hidden" name="telefone.version"
+			value="${telefone?.version}">
 
 		<div class="box-body">
 
 			<div class="col-sm-6 form-group" id="div_tipoTelefone">
 				<label>Tipo</label>
-				<div class="input-group">
-					<div class="input-group-addon">
-						<i class="fa fa-laptop"></i>
-					</div>
-					<input type="text" class="form-control"
-						name="cliente.telefone.tipoTelefone"
-						value="${cliente?.telefone?.tipoTelefone}">
-				</div>
+
+				<g:select class="form-control select2"
+					name="telefone.tipoTelefone"
+					noSelection="${['null':'Select One...']}"
+					from="${br.com.teste.enums.TipoTelefone?.values()}"
+					value="${telefone?.tipoTelefone}" />
+
 			</div>
 
 			<div class="col-sm-6 form-group" id="div_numero">
@@ -32,8 +31,8 @@
 						<i class="fa fa-laptop"></i>
 					</div>
 					<input type="text" class="form-control"
-						name="cliente.telefone.numero" id="numero"
-						value="${cliente?.telefone?.numero}">
+						name="telefone.numero" id="numero"
+						value="${telefone?.numero}">
 				</div>
 			</div>
 
@@ -54,6 +53,8 @@
 <!-- Page script -->
 <script>
 	$(document).ready(function() {
+		$(".select2").select2();
+
 		$("#numero").inputmask({
 			mask : "(99) 9999-9999"
 		});
